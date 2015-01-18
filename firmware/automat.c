@@ -61,9 +61,12 @@ void mat_read(){
 	mat_status[11] += (MAT_12_PIN & (1<<MAT_12))?((mat_status[11]==255)?0:1):-mat_status[11];
 	
 	mat_door_status += (MAT_DOOR_PIN & (1<<MAT_DOOR))?((mat_door_status==255)?0:1):-mat_door_status;
-	mat_pir_spot_status += (MAT_PIR_SPOT_PIN & (1<<MAT_PIR_SPOT))?((mat_pir_spot_status==255)?0:1):-mat_pir_spot_status;
-	mat_pir_room_status += (MAT_PIR_ROOM_PIN & (1<<MAT_PIR_ROOM))?((mat_pir_room_status==255)?0:1):-mat_pir_room_status;
-	
+	//mat_pir_spot_status += (MAT_PIR_SPOT_PIN & (1<<MAT_PIR_SPOT))?((mat_pir_spot_status==0)?0:1):-mat_pir_spot_status;
+	//mat_pir_room_status += (MAT_PIR_ROOM_PIN & (1<<MAT_PIR_ROOM))?((mat_pir_room_status==0)?0:1):-mat_pir_room_status;
+	mat_pir_spot_status = (MAT_PIR_SPOT_PIN & (1<<MAT_PIR_SPOT))?255:0;
+	mat_pir_room_status = (MAT_PIR_ROOM_PIN & (1<<MAT_PIR_ROOM))?255:0;
+	//if(mat_pir_spot_status) uart_putc('0');
+	//if(mat_pir_room_status) uart_putc('1');
 }
 
 
@@ -182,6 +185,8 @@ void mat_check(){
 			uart_puts(tmp);
 		}
 	}
+
+
 }
 
 void mat_set(uint8_t slot, uint8_t val){
@@ -227,7 +232,6 @@ void mat_debug(){
 		}
 		
 	}
-	
 	
 	
 }
