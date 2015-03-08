@@ -1,0 +1,15 @@
+
+[LICK]
+apikey=12345
+prefix=https://ora2.tutschonwieder.net:8443/apex/tensai-dev/v1
+buy=/put/sellproduct/{APIKEY}/1/{SCHACHTID}/1
+empty=/put/schachtleer/{APIKEY}/1/{SCHACHTID}
+query=/get/fuellstand/1/{SCHACHTID}
+
+[SLOTS]
+M1=1
+M2=2
+M3=3
+M4=4
+M5=26
+M6=27
