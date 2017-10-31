@@ -27,7 +27,7 @@ buy_light = False
 lick = lick()
 
 for i in range(0,6):
-	ser.write("/i/s/" + str(i) str(lick.getLevel(i)) + "\r\n")
+	ser.write("/i/s/" + str(i) + str(lick.getLevel(i)) + "\r\n")
 
 while(42):
 	
