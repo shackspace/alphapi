@@ -27,7 +27,7 @@ buy_light = False
 lick = lick()
 
 for i in range(0,6):
-	ser.send("/i/s/" + str(lick.getLevel(i)) + "\r\n")
+	ser.write("/i/s/" + str(i) str(lick.getLevel(i)) + "\r\n")
 
 while(42):
 	
@@ -39,12 +39,12 @@ while(42):
 		buy_light = False
 		soundman.playRandom("./sounds/buy/", False)
 		level = lick.sendBuy(slot)
-		ser.send("/i/s/" + str(level) + "\r\n")
+		ser.write("/i/s/" +str(slot)+ str(level) + "\r\n")
 	
 	if(line.startswith("/o/e/")):
 		slot = int(line[5])
 		level = lick.sendEmpty(slot)
-		ser.send("/i/s/" + str(level) + "\r\n")
+		ser.write("/i/s/" + str(slot)+ str(level) + "\r\n")
 	
 	if(line.startswith("/o/d/1")): #door open
 		soundman.playRandom("./sounds/door_open/", False)	

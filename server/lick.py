@@ -27,6 +27,8 @@ class lick:
 			self.levels[slotnum] = data["fuellstand"]
 		except:
 			print "lick error"
+		if (self.levels[slotnum] > 99):
+				self.levels[slotnum] = 99
 		return self.levels[slotnum]
 		
 	def sendEmpty(self, slotnum):
@@ -60,6 +62,8 @@ class lick:
 			self.levels[slotnum] = data["fuellstand"]
 		except:
 			print "lick error"
+		if (self.levels[slotnum] > 99):
+			self.levels[slotnum] = 99
 		return self.levels[slotnum]
 
 
