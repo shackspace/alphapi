@@ -92,3 +92,4 @@ while(42):
 		light.set(2, False)	
 	elif(time.time() - buy_time > 3):
 		light.set(2, True)	
+ 
